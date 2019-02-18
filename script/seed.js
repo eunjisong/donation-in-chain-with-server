@@ -63,7 +63,6 @@ async function seed() {
       userId: 1,
       currentAmount: 0,
       targetAmount: 1,
-      image: ['', ''],
       recipient: '0x8A6B29aA6dA10555115f989F99Be14b3fEC1f945',
       instanceAddress: '0x5Dba8eF4712050d763B15B630D46b2f1474c7D81'
     }),
@@ -74,7 +73,6 @@ async function seed() {
       userId: 1,
       currentAmount: 0,
       targetAmount: 10,
-      image: ['', ''],
       recipient: '0x8A6B29aA6dA10555115f989F99Be14b3fEC1f945',
       instanceAddress: '0x4713eDac65e3Ef17AA3039DC1f9D667EF0fAC798'
     }),
@@ -86,7 +84,6 @@ async function seed() {
       userId: 2,
       currentAmount: 0,
       targetAmount: 3,
-      image: ['', ''],
       recipient: '0x8A6B29aA6dA10555115f989F99Be14b3fEC1f945',
       instanceAddress: '0xDEfeE806E2DF7CC0a1aa7a60349e26850850Fef6'
     }),
@@ -97,7 +94,6 @@ async function seed() {
       userId: 2,
       currentAmount: 0,
       targetAmount: 2,
-      image: ['', ''],
       recipient: '0x8A6B29aA6dA10555115f989F99Be14b3fEC1f945',
       instanceAddress: '0x6686796F5339bD7B1E406CFf2269E8A5Ac1c7F07'
     })
