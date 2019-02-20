@@ -26,6 +26,9 @@ const User = db.define('user', {
   },
   ethereumId: {
     type: Sequelize.STRING
+  },
+  donated: {
+    type: Sequelize.ARRAY(Sequelize.STRING)
   }
 })
 

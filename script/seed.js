@@ -33,13 +33,21 @@ async function seed() {
     User.create({
       email: 'one@email.com',
       password: '123',
-      ethereumId: '0x613BD02e57dd7C55e23CCA314Ea946B993CDC4eC'
+      ethereumId: '0x613BD02e57dd7C55e23CCA314Ea946B993CDC4eC',
+      donated: [
+        '0x5Dba8eF4712050d763B15B630D46b2f1474c7D81',
+        '0x4713eDac65e3Ef17AA3039DC1f9D667EF0fAC798'
+      ]
     }),
 
     User.create({
       email: 'two@email.com',
       password: '123',
-      ethereumId: '0x3834F2827610208327b45435E6a6A1A61e3Eb87e'
+      ethereumId: '0x3834F2827610208327b45435E6a6A1A61e3Eb87e',
+      donated: [
+        '0x5Dba8eF4712050d763B15B630D46b2f1474c7D81',
+        '0x4713eDac65e3Ef17AA3039DC1f9D667EF0fAC798'
+      ]
     }),
 
     User.create({
@@ -57,27 +65,38 @@ async function seed() {
 
   const donations = await Promise.all([
     Donation.create({
+      status: 'connected',
       description:
         'Jake needs sneakers. He walks on barefoot for hours to deliver milk.',
       product: 'Sneakers',
       userId: 1,
       currentAmount: 0,
       targetAmount: 1,
+      contributors: [
+        '0x613BD02e57dd7C55e23CCA314Ea946B993CDC4eC',
+        '0x3834F2827610208327b45435E6a6A1A61e3Eb87e'
+      ],
       recipient: '0x8A6B29aA6dA10555115f989F99Be14b3fEC1f945',
       instanceAddress: '0x5Dba8eF4712050d763B15B630D46b2f1474c7D81'
     }),
     Donation.create({
+      status: 'connected',
       description:
         "Children in Milkiki, Philiphine, wants to become engineers, doctors, teachers, scientist and etc, but they don'n have a school. Please support these children for their education.",
       product: 'School',
       userId: 1,
       currentAmount: 0,
       targetAmount: 10,
+      contributors: [
+        '0x613BD02e57dd7C55e23CCA314Ea946B993CDC4eC',
+        '0x3834F2827610208327b45435E6a6A1A61e3Eb87e'
+      ],
       recipient: '0x8A6B29aA6dA10555115f989F99Be14b3fEC1f945',
       instanceAddress: '0x4713eDac65e3Ef17AA3039DC1f9D667EF0fAC798'
     }),
 
     Donation.create({
+      status: 'connected',
       description:
         'Marnie wishes to have a goat to support her children. She recently lost her husband and became a sole caretaker of 5 children. Please help her to go through the tough state of life.',
       product: 'Goat',
@@ -88,6 +107,7 @@ async function seed() {
       instanceAddress: '0xDEfeE806E2DF7CC0a1aa7a60349e26850850Fef6'
     }),
     Donation.create({
+      status: 'connected',
       description:
         'Phebe needs a small wagon for her crops. She is having a hard time to carry all and walk 20 miles to the market.',
       product: 'Small Wagon',
@@ -96,6 +116,15 @@ async function seed() {
       targetAmount: 2,
       recipient: '0x8A6B29aA6dA10555115f989F99Be14b3fEC1f945',
       instanceAddress: '0x6686796F5339bD7B1E406CFf2269E8A5Ac1c7F07'
+    }),
+    Donation.create({
+      description:
+        'Maggie wants to have a chicken to feed her children an egg and sell some to the market.',
+      product: 'chicken',
+      userId: 1,
+      currentAmount: 0,
+      targetAmount: 1,
+      recipient: '0x8A6B29aA6dA10555115f989F99Be14b3fEC1f945'
     })
   ])
 

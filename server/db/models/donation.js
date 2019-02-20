@@ -6,6 +6,10 @@ const Donation = db.define('donation', {
     type: Sequelize.STRING,
     allowNull: false
   },
+  status: {
+    type: Sequelize.ENUM(['connected', 'notConnected']),
+    defaultValue: 'notConnected'
+  },
   product: {
     type: Sequelize.STRING,
     allowNull: false
@@ -14,9 +18,12 @@ const Donation = db.define('donation', {
     type: Sequelize.STRING,
     allowNull: false
   },
+  contributors: {
+    type: Sequelize.ARRAY(Sequelize.STRING)
+  },
   currentAmount: {
     type: Sequelize.INTEGER,
-    allowNull: false
+    defaultValue: 0
   },
   targetAmount: {
     type: Sequelize.INTEGER,
@@ -24,7 +31,7 @@ const Donation = db.define('donation', {
   },
   instanceAddress: {
     type: Sequelize.STRING,
-    allowNull: false
+    defaultValue: ''
   },
   image: {
     type: Sequelize.ARRAY(Sequelize.STRING),
